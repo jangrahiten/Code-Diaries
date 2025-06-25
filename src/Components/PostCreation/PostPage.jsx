@@ -97,7 +97,7 @@ const PostPage = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/posts/getpost/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/posts/getpost/${id}`);
         setPost(response.data);
         console.log(response.data)
       } catch (error) {
@@ -141,7 +141,7 @@ const PostPage = () => {
             </a>
           </li>
           <li>
-            <a href={`/profile/${post.authorName}`} className="flex items-center space-x-2 hover:text-blue-600">
+            <a href={`/profile/${post.authorEmail}`} className="flex items-center space-x-2 hover:text-blue-600">
               <FaUser size={24} />
               <span>Profile</span>
             </a>
