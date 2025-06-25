@@ -1,5 +1,3 @@
-Here’s a sample README for your **CodeDiaries** full-stack blogging application on GitHub:
-
 ---
 
 # CodeDiaries - Full-Stack Blogging Application
@@ -27,7 +25,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/vijaykr338/codeDiaries.git
+   git clone https://github.com/jangrahiten/Code-Diaries.git
    ```
 
 2. Navigate into the project folder:
