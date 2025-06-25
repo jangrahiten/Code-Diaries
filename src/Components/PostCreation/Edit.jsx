@@ -39,7 +39,7 @@ function Edit() {
     data.authorName = user.username;
     data.authorEmail = user.email;
 
-    let r = await fetch('http://localhost:3000/posts/create-post', {
+    let r = await fetch(`${import.meta.env.VITE_BACKEND_URL}/posts/create-post`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',

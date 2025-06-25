@@ -59,7 +59,7 @@ function SignUp() {
     setParagraphText('');
 
     // Send data to backend
-    await fetch('http://localhost:3000/auth/signup', {
+    await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

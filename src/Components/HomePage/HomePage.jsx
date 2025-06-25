@@ -28,7 +28,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:3000/posts/getposts/");
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/posts/getposts/`);
         const data = await response.json();
         setBlogs(data);
       } catch (error) {

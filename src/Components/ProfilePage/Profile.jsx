@@ -23,7 +23,7 @@ function Profile({email}) {
     useEffect(()=>{
       const fetchProfile=async()=>{
         try{
-          const response=await axios.get(`http://localhost:3000/profile/viewprofile/${email}`,{
+          const response=await axios.get(`${import.meta.env.VITE_BACKEND_URL}/profile/viewprofile/${email}`,{
             withCredentials:true
           })
           // console.log(response.data);
@@ -55,7 +55,7 @@ function Profile({email}) {
     useEffect(()=>{
       const fetchUsersPosts=async()=>{
         try{
-          const response=await axios.get(`http://localhost:3000/profile/getUsersPosts/${email}`,{
+          const response=await axios.get(`${import.meta.env.VITE_BACKEND_URL}/profile/getUsersPosts/${email}`,{
             withCredentials:true
           })
           console.log(response.data);
@@ -105,7 +105,7 @@ function Profile({email}) {
         formData.append('profile_pic', file);
         
         try {
-          const response = await axios.post(`http://localhost:3000/profile/upload/profile/${email}`, formData, {
+          const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/profile/upload/profile/${email}`, formData, {
             withCredentials: true,
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -133,7 +133,7 @@ function Profile({email}) {
         formData.append('bg_pic',file);
         
         try {
-          const response = await axios.post(`http://localhost:3000/profile/upload/bg/${email}`, formData, {
+          const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/profile/upload/bg/${email}`, formData, {
             withCredentials: true,
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -180,7 +180,7 @@ function Profile({email}) {
 
     const handleUpdateProfile=async()=>{
       try {
-        const response = await axios.post(`http://localhost:3000/profile/update/${email}`, details, {
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/profile/update/${email}`, details, {
           withCredentials: true
         });
     
@@ -201,7 +201,7 @@ function Profile({email}) {
 
     const handleSummaryUpdate=async()=>{
       try {
-        const response = await axios.post(`http://localhost:3000/profile/update_summary/${email}`, details, {
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/profile/update_summary/${email}`, details, {
           withCredentials: true
         });
 

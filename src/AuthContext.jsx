@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     if (token) {
-      axios.get('http://localhost:3000/auth/me', {
+      axios.get(`${import.meta.env.VITE_BACKEND_URL}/auth/me`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

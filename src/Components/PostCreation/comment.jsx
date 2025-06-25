@@ -26,7 +26,7 @@ const CommentBox = () => {
       const newId = convertStringToASCIIInt(id);
       console.log(newId);
       try {
-        const response = await fetch(`http://localhost:3000/comments/comments/${newId}`);
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/comments/comments/${newId}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -60,7 +60,7 @@ const CommentBox = () => {
 
     try {
 
-      const response = await fetch('http://localhost:3000/comments/comments', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/comments/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ const CommentBox = () => {
         author: user
       };
   
-      const response = await fetch(`http://localhost:3000/comments/comments/${commentId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/comments/comments/${commentId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ const CommentBox = () => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      const response = await fetch(`http://localhost:3000/comments/comments/${commentId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/comments/comments/${commentId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
